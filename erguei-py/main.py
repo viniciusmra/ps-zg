@@ -1,3 +1,7 @@
+# Desafio Acelera ZG
+# Autor: Vinícius Alves
+# Data: Dez/2023
+
 musicNodes = [
     "\n", # 0
     "Erguei as mãos ", # 1
@@ -65,47 +69,45 @@ musicPath = [
     12,0,
 ]
 
-def printMusic(start, stop):
-    print(f"De {start}% a {stop}%:")
+def printMusic(part):
+    if(part == "0"):
+        print("\n> Imprimindo a música toda <\n")
+        start = 0
+        stop = len(musicPath)
 
-    musicLen = len(musicPath)
-    start = int((musicLen/100)*start)
-    stop = int((musicLen/100)*stop)
+    else:
+        print(f"\n> Imprimindo a parte {part} <\n")
+        if(part == "1"):
+            start = 0
+            stop = 53
+        else:
+            start = 53
+            stop = len(musicPath)
 
     animalIndex = 0
     incrementalIndex = 0
-    incrementalNode = ""
-
-    for index, nodeNumber in enumerate(musicPath[0:stop]):
+    musicNodes[12] = ""
+    
+    for nodeNumber in musicPath[start:stop]:
         if(nodeNumber == 6):
-            if(index > start):
-                print(musicNodes[6].replace("animalA", animalsList[animalIndex]).replace("animalB", animalsList[animalIndex + 1]), end='')
+            print(musicNodes[6].replace("animalA", animalsList[animalIndex]).replace("animalB", animalsList[animalIndex + 1]), end='')
             animalIndex = animalIndex + 2
             continue
         
         if(nodeNumber == 12):
-            incrementalNode = incrementalNode + incrementalList[incrementalIndex]
+            musicNodes[12] = musicNodes[12] + incrementalList[incrementalIndex]
             incrementalIndex += 1
-            if(index > start):
-                print(incrementalNode)
-            continue
         
-        if(index > start):
-            print(musicNodes[nodeNumber], end='')
+        print(musicNodes[nodeNumber], end='')
     
     print("\n")
 
-
 if __name__ == "__main__":
     while(1):
-        inputString = input("Digite as porcentagens de inicio e fim da musica separadas por espaço: ")
-        values = inputString.split()
+        print()
+        inputString = input("0 - Música Toda\n1 - Primeira parte\n2 - Segunda parte\n> ")
+        if(inputString == "0" or inputString == "1" or inputString == "2"):
+                printMusic(inputString)
+        else:
+            continue
 
-        if len(values) == 1:
-            start = 0
-            stop = int(values[0])
-        elif len(values) == 2:
-            start = int(values[0])
-            stop = int(values[1])
-
-        printMusic(start, stop)

@@ -10,6 +10,10 @@ A ideia inicial era descobrir um caminho euleriano nesse grafo que representasse
 
 Dessa forma, foi construído um rascunho inicial de um grafo cujos nós eram trechos da música, ligados por arcos que representavam a relação entre esses trechos. Esse esboço  serviu para avaliar a viabilidade da solução, pois se não fosse possível usar essa representação, outra ideia teria que ser concebida.
 
+<p align="center">
+  <img src="imagens/esboco-grafo.jpg" alt="drawing" width="15%"/>
+</p>
+
 Depois de desenhar a concepção inicial do grafo, a parte de programação foi inciada. Nessa etapa, foi escolhida uma abordagem mais conservadora usando Python para fazer um código básico que resolvesse o problema. A construção dess código é detalhada mais a baixo.
 
 Posteriormente, foi desenvolvida outra solução que fosse implmentada usando JavaScript e React para promover uma interface mais interativa com o usuário, sem deixar de lado as representações usando grafos.
@@ -94,6 +98,10 @@ Outro requisito importante do desafio é que seja possível imprimir a música t
 ~~~
 
 ## Implementação usando React
+
+<p align="center">
+  <img src="imagens\implementaca-react.png" alt="drawing" width="60%"/>
+</p>
 
 ## Autor
 Vinícius Alves

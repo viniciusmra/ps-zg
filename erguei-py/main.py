@@ -86,7 +86,7 @@ def printMusic(part):
 
     animalIndex = 0
     incrementalIndex = 0
-    musicNodes[12] = ""
+    musicNodes[12] = "" 
     
     for nodeNumber in musicPath[start:stop]:
         if(nodeNumber == 6):
